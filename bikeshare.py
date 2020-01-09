@@ -65,6 +65,7 @@ def load_data(city, month, day):
 
     # extract month, day of week, and hour from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
+    # extract day of the week
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
 
@@ -72,6 +73,7 @@ def load_data(city, month, day):
     if month != 'All':
         # use the index of the months list to get the corresponding int
         months = ['January', 'February', 'March', 'April', 'May', 'June']
+	# index of list starts with 0 and months start with  1
         month = months.index(month) + 1
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
