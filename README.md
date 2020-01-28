@@ -59,4 +59,4 @@ To answer these questions using Python, you will need to write a Python script. 
 * new_york_city.csv
 * washington.csv
 
-
+Samples of the data can be downloaded from https://www.capitalbikeshare.com/system-data
