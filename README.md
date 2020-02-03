@@ -99,3 +99,11 @@ def get_filter(filter_name, filter_options):
 ## Project common mistakes
 * Forget that washington.csv file doesn't have Birth year and Gender fields
 * Forget to include method to ask the user if he wants to display 5 raws of data. 
+* Include analysis for all months of the year, the correct insight is the analysis covers months from January to June only. So writing something like that is wrong 
+```python
+ ['all', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+```
+The correct is 
+```python
+['all', 'January', 'February', 'March', 'April', 'May', 'June']
+```
