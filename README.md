@@ -96,3 +96,6 @@ def get_filter(filter_name, filter_options):
                   'Remember, the options are {1}. Select one of them:'.format(filter_name, ', '.join(filter_options)))
     return selected_filter
 ```
+## Project common mistakes
+* Forget that washington.csv file doesn't have Birth year and Gender fields
+* Forget to include method to ask the user if he wants to display 5 raws of data. 
