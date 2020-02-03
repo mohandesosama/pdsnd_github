@@ -60,3 +60,39 @@ To answer these questions using Python, you will need to write a Python script. 
 * washington.csv
 
 Samples of the data can be downloaded from https://www.capitalbikeshare.com/system-data
+
+## Top performed students
+### Student created novel method to get input from user
+```python
+def get_filters():
+    """
+    Asks user to specify a city, month, and day to analyze.
+
+    Returns:
+        (str) city - name of the city to analyze
+        (str) month - name of the month to filter by, or "all" to apply no month filter
+        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+    """
+    print('Hello! Let\'s explore some US bikeshare data!')
+
+    city = get_filter('city', ['Chicago', 'New York', 'Washington'])
+    month = get_filter('month', ['all', 'January', 'February', 'March', 'April', 'May', 'June',
+                                 'July', 'August', 'September', 'October', 'November', 'December'])
+    day = get_filter('day', ['all', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
+
+    return city, month, day
+
+
+def get_filter(filter_name, filter_options):
+    print('Select a {0} ({1}):'.format(filter_name, ', '.join(filter_options)))
+    while True:
+        entered_filter = input()
+        if entered_filter.lower().strip(' ') in [option.lower() for option in filter_options]:
+            print('-' * 40)
+            selected_filter = entered_filter
+            break
+        else:
+            print('The {0} you entered is not correct. '
+                  'Remember, the options are {1}. Select one of them:'.format(filter_name, ', '.join(filter_options)))
+    return selected_filter
+```
